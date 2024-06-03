@@ -1,0 +1,243 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    background: transparent;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    background: blueviolet;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+
+.logo {
+    font-size: 2em;
+    color: beige;
+    user-select: none;
+}
+
+.navigation a {
+    position: relative;
+    font-size: 1.0em;
+    color: beige;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+}
+
+.navigation a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: beige;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+
+.navigation a:hover::after {
+    transform: scaleX(1);
+}
+
+.navigation .btnLogin {
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid beige;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.0em;
+    color: beige;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: .5s;
+}
+
+.navigation .btnLogin:hover {
+    background: beige;
+    color: black;
+}
+
+.content {
+    position: relative;
+    width: 400px;
+    height: 450px;
+    background: rgb(225, 220, 225);
+    border: 2px solid white;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transform:scale(0);
+    transition: transform .5s,height .2s ease;
+
+
+}
+.content.active-popup{
+    transform: scale(1);
+}
+
+.content .form-box {
+    width: 100%;
+    padding: 40px;
+}
+
+.content .form-box.login {
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+.content.active .form-box.login {
+    transition: transform .18s ease;
+    transform: translateX(-400px);
+}
+
+.content .form-box.register {
+    position: absolute;
+    transition: transform .18s ease;
+    transform: translateX(400px);
+}
+
+.content.active .form-box.register {
+    transform: translateX(0);
+}
+
+.content .icon-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 37px;
+    height: 37px;
+    background: #162938;
+    font-size: 2em;
+    color: beige;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 17px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.form-box h2 {
+    font-size: 2em;
+    color: #162938;
+    text-align: center;
+}
+
+.input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid #162938;
+    margin: 30px 0;
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    font-size: 1em;
+    color: #162938;
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.input-box input:focus ~ label,
+.input-box input:valid ~ label {
+    top: -4px;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+}
+
+.input-box .icon {
+    position: absolute;
+    right: 8px;
+    font-size: 1.2em;
+    color: #162938;
+    line-height: 57px;
+}
+
+.remember-forgot {
+    font-size: .9em;
+    color: #162938;
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.remember-forgot label input {
+    accent-color: #162938;
+    margin-right: 3px;
+}
+
+.remember-forgot a {
+    color: #162938;
+    text-decoration: none;
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+.button {
+    width: 100%;
+    height: 45px;
+    background: #162938;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    color: beige;
+    font-weight: 500;
+}
+
+.register {
+    font-size: .9em;
+    color: #162938;
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 0 10px;
+}
+
+.register p a {
+    color: #162938;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.register p a:hover {
+    text-decoration: underline;
+}
