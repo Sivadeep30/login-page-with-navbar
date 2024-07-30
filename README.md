@@ -45,7 +45,7 @@ The webpage consists of:
    - Click on "Register" in the login form to switch to the registration form.
    - Click on "Login" in the registration form to switch back to the login form.
    - Click the close icon to close the popup.
-
+   - 
 ## Project Structure
 
 ```plaintext
